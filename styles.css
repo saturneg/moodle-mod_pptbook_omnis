@@ -280,12 +280,14 @@
 }
 
 /* Если кнопка недоступна (первая/последняя картинка) */
+/*
 .pptbook-nav:disabled {
     opacity: 0.3;
     cursor: default;
     background: rgba(0, 0, 0, 0.3);
     border-color: rgba(255, 255, 255, 0.3);
 }
+*/
 
 .pptbook-nav-prev { left: 30px; }
 .pptbook-nav-next { right: 30px; }

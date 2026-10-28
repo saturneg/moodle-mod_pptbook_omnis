@@ -133,8 +133,23 @@ if (has_capability('mod/pptbook:manage', $context)) {
     ]);
 }
 
+// Собираем АБСОЛЮТНО ВСЕ картинки для лайтбокса
+$allitems = [];
+foreach ($slides as $f) {
+    $url = moodle_url::make_pluginfile_url(
+        $f->get_contextid(), $f->get_component(), $f->get_filearea(),
+        $f->get_itemid(), $f->get_filepath(), $f->get_filename(), false
+    );
+    $allitems[] = [
+        'src' => (string)$url, 
+        'alt' => $f->get_filename()
+    ];
+}
+
 $templatecontext = (object)[
     'items'     => $items,
+    'allitems_json'=> json_encode($allitems), // 
+    'startindex'=> $start,    // (индекс первой картинки на странице)	
     'page'      => $page,
     'pages'     => $pages,
     'hasprev'   => $page > 1,
