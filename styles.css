@@ -249,3 +249,54 @@
 .path-course-view .activity.modtype_pptbook .contentafterlink {
     display: none;
 }
+
+/* Кнопки навигации в лайтбоксе */
+.pptbook-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 56px;
+    height: 56px;
+    border: 2px solid rgba(255, 255, 255, 0.6); /* светлая рамка */
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5); /* тёмный полупрозрачный фон */
+    color: #fff; /* белая стрелка */
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10001;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* При наведении — светло-красный */
+.pptbook-nav:hover:not(:disabled) {
+    background: #ff6b6b; /* светло-красный */
+    border-color: #ff6b6b;
+    transform: translateY(-50%) scale(1.05);
+}
+
+/* Если кнопка недоступна (первая/последняя картинка) */
+.pptbook-nav:disabled {
+    opacity: 0.3;
+    cursor: default;
+    background: rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.pptbook-nav-prev { left: 30px; }
+.pptbook-nav-next { right: 30px; }
+
+/* На мобильных делаем их чуть меньше */
+@media (max-width: 600px) {
+    .pptbook-nav {
+        width: 44px;
+        height: 44px;
+        font-size: 22px;
+    }
+    .pptbook-nav-prev { left: 12px; }
+    .pptbook-nav-next { right: 12px; }
+}

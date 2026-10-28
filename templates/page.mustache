@@ -65,13 +65,13 @@
     {{#hasnext}}<a class="btn btn-secondary" href="{{nexturl}}">{{#str}} next, mod_pptbook {{/str}}</a>{{/hasnext}}
   </div>
 
-  <!-- Lightbox modal -->
- <div id="pptbook-modal">
-  <img
-    id="pptbook-modal-img"
-    src="about:blank"
-    alt=""
-    data-src="{{modalimgsrc}}"
-  >
+
+<!-- Lightbox modal -->
+<div id="pptbook-modal" aria-hidden="true">
+  <button type="button" id="pptbook-modal-prev" class="pptbook-nav pptbook-nav-prev" aria-label="Previous">&#10094;</button>
+  <img id="pptbook-modal-img" alt="">
+  <button type="button" id="pptbook-modal-next" class="pptbook-nav pptbook-nav-next" aria-label="Next">&#10095;</button>
 </div>
+
+
 </div>
